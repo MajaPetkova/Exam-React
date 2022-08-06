@@ -1,0 +1,25 @@
+.errorBox{
+    text-align: center;
+
+}
+.textContainer{
+font-size: 6ex;
+font-weight: bold;
+margin-top: 150px;
+color: rgb(7, 33, 55);
+}
+.btnPrimary{
+    height: 15%;
+    background-color: #2A265F;
+    letter-spacing: 1px;
+    padding: 10px;
+    margin-top: auto;
+    font-size: 21px;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    text-decoration:none;
+    margin: 5px;
+    width: 70px;
+    font-weight: normal;
+ 
+}
