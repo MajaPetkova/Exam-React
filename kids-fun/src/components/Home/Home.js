@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './Home.module.css'
 const Home = () => {
     return (
@@ -16,7 +17,7 @@ const Home = () => {
                     <h3>Want to see the upcoming events...</h3>
                     <div className={styles['hero_btn-continer']}>
                         
-                        <button type="click" className={styles['btn-start']}>Let's start</button>
+                        <Link to={'/catalog'}  className={styles['btn-start']}>Let's start</Link>
 
                     </div>
                 </div>
