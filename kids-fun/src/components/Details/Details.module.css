@@ -18,7 +18,7 @@
     margin-bottom: 10px;
     text-transform: uppercase;
     text-align: center;
-    
+        
 }
 
 .info-section {
@@ -44,7 +44,7 @@
     font-size: 36px;
     font:bolder;
     /* font-weight: 500; */
-  
+   text-align: center;
 }
 
 .details-join>h2 {
@@ -52,8 +52,6 @@
     color: #778e9c;
     font-size: 30px;
     margin-top: 0px;
-   
-  
 } 
 .join{
     margin-top: 25px;
@@ -68,6 +66,7 @@
     border: 1px solid rgba(218, 181, 181, 0.829);
     font-size: 20px;
     font-family: "Raleway", sans-serif;
+   margin-left: 40px;
 }
 
 .type {
@@ -91,13 +90,13 @@
 }
 
 .info-section>.text {
-    margin-top:-10px;
+    margin-top:-30px;
     padding: 60px;
-    height: 50%;
+    height: 30%;
 }
 
 .text {
-    font-size: 24px;
+     font-size: 24px;
     color:#2a2548 ;
     font-family: "Raleway", sans-serif;
 }
@@ -159,17 +158,19 @@ padding-left: 40px;
 .place{
 font-size: 20px;
 display:inline-block;
-margin-left:50px;
-color:#2a2548 
+margin-left:100px;
+color:#2a2548 ;
+text-align: center;
 }
 .place p{
     color:rgb(109, 207, 220);
     font-size:20px;
-    font-weight:bolder
-
+    font-weight:bolder;
+    text-align: center;
 }
 .place h3{
-    color:#2a2548 
+    color:#2a2548 ;
+    text-align: center;
 }
 .no-events{
     font-size: 30px;
@@ -183,4 +184,22 @@ color:#2a2548
     font-size: 22px;
     text-align: left;
 padding-top: 20px;
+}
+
+.details-visitors h2{
+    /* font-size: 30px; */
+    padding-bottom: 30px;
+    color: #2a2548;
+    font-size: 26px;
+    text-align: center;
+    padding-top: -20px;
+    margin-left: -80px;
+    font-weight: bold;
+}
+.visitorName{
+    color: #778e9c;
+    font-size: 20px;
+    text-align: center;
+    /* padding-top: 0px; */
+    margin-left: -80px;
 }

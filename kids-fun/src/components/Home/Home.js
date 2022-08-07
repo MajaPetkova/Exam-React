@@ -21,12 +21,14 @@ const Home = () => {
                     </div>
                 </div>
                 <div className={styles['hero_img-container']}>
-                    <div>
-                        <img src="./images/happy-little-children-having-fun-vector.jpg" alt="" className="img-fluid" />
-                       
+                    {/* <div> */}
+                        <img className={styles['img-grid-row-2']} src="./images/pic1.jpg" alt="" />
+                       <img className={styles['img-grid-col-2']} src="./images/happy-little-children-having-fun-vector.jpg" alt=""/>
+                       <img src="./images/students.jpg" alt="" className="img-fluid" />
+                       <img src="./images/ima.png" alt="" className="img-fluid" />
+                       <img  className={styles['img-grid-col-2']} src="./images/blog-42.jpg" alt="" />
                    
-                   
-                    </div>
+                    {/* </div> */}
                 </div>
             </div>
         </section>

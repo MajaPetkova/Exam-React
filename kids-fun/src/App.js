@@ -38,6 +38,7 @@ function App() {
                         <Route path='/details/:eventId' element={<Details />} />
                         <Route path='/catalog' element={<Catalog />} />
                         <Route path='/*' element={<Error />} />
+      
                     </Routes>
 
                 </EventProvider>

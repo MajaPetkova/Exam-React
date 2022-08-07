@@ -1,4 +1,4 @@
-// const api = require('../services/eventService')
+const api = require('../services/eventService')
 
 module.exports = (api) => async (req, res, next) => {
     const id = req.params.id;

@@ -1,7 +1,7 @@
 
 import { createContext } from "react";
 import { useEffect, useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate,  } from "react-router-dom";
 import * as eventService from '../services/eventService'
 
 
@@ -44,8 +44,20 @@ export const EventProvider=(
         setEvents(state => state.filter(x => x._id !== eventId)
         )
     }
+    // const addVisitor=(eventId, visitor)=>{
+    //     setEvents(state=>{
+    //         const event= state.find(x=>x._id===eventId)
+    //         const visitors=event.visitors || [];
+    //         visitors.push(visitor)
+    //         return [
+    //             ...state.filter(x=>x._id !== eventId),
+    //             {...event,visitors }
+
+    //         ]
+    //     })
+    // }
   return(
-    <EventContext.Provider value={{ events, addEventHandler, eventEdit,eventRemove }}>
+    <EventContext.Provider value={{ events, addEventHandler, eventEdit,eventRemove}}>
         {children}
     </EventContext.Provider>
 )

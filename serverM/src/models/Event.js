@@ -7,7 +7,8 @@ const eventSchema= new Schema({
     date: {type: String},
     img: {type: String},
     description: {type: String},
-    _ownerId: {type:ObjectId, ref:'User'}
+    _ownerId: {type:ObjectId, ref:'User'},
+    visitors: { type: [ObjectId], ref: 'User', default: [] }
 })
 
 const Event= model('Event', eventSchema)
