@@ -1,6 +1,6 @@
-import * as request from './requester'; 
+// import * as request from './requester'; 
 
-const baseUrl = 'http://localhost:3030/data/visitors';
+// const baseUrl = 'http://localhost:3030/data/events';
 
-export const addVisitor= (eventId, user )=>
-request.post(baseUrl, {eventId, user})
+// export const addVisitor= (eventId, user )=>
+// request.post(`${baseUrl}/${eventId}/join`, {eventId, user})

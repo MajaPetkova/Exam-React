@@ -25,7 +25,7 @@ export const request = async (method, url, data) => {
                 body: JSON.stringify(data)
             })
         }
-        console.log(buildRequest)
+        // console.log(buildRequest)
         const response = await buildRequest;
         console.log(response)
         const result = await response.json();

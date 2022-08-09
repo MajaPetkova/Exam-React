@@ -136,7 +136,8 @@
     font-size: 21px;
     border-radius: 10px;
     text-decoration:none;
-    margin: 5px
+    margin: 0px;
+    border: none;
   
 }
 

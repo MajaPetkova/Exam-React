@@ -8,7 +8,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 
 const Details = () => {
     const { eventRemove, } = useContext(EventContext)
-    const { eventId } = useParams();
+    const { eventId,  } = useParams();
     const { user } = useContext(AuthContext)
     const [currentEvent, setCurrentEvent] = useState({});
     // const [visitor, setVisitor]= useState({})
@@ -35,79 +35,81 @@ const Details = () => {
         }
     }
     // const joinHandler = () => {
-    //     visitorService.addVisitor(eventId, user.email)
-    //        .then(res=>
-    //         console.log(res))
-    
+    //     visitorService.addVisitor(eventId, user)
+    //     .then(res=>{
+    //         console.log(res)
+    //     })
+
     // }
-       
-        return (
-            <section className={styles['event-details']}>
-                <h1>Event Details</h1>
-                <div className={styles['info-section']}>
-                    <div className={styles['event-header']}>
-                        <img className={styles['event-img']} src={currentEvent.img} />
-                        <h1>{currentEvent.title}</h1>
-                        <span className={styles.levels}>Category:</span>
-                        <p className={styles.type}>{currentEvent.category}</p>
-                    </div>
-                    <div className={styles.place}>
-                        <h3>Place:</h3>
-                        <p>{currentEvent.place}</p>
-                        <h3>Date:</h3>
-                        <p>{currentEvent.date}</p>
-                    </div>
-                    <p className={styles.text}>
-                        {currentEvent.description}
-                        {/* Do you like reading in English? Reading is a great way to improve your
+
+    return (
+        <section className={styles['event-details']}>
+            <h1>Event Details</h1>
+            <div className={styles['info-section']}>
+                <div className={styles['event-header']}>
+                    <img className={styles['event-img']} src={currentEvent.img} />
+                    <h1>{currentEvent.title}</h1>
+                    <span className={styles.levels}>Category:</span>
+                    <p className={styles.type}>{currentEvent.category}</p>
+                </div>
+                <div className={styles.place}>
+                    <h3>Place:</h3>
+                    <p>{currentEvent.place}</p>
+                    <h3>Date:</h3>
+                    <p>{currentEvent.date}</p>
+                </div>
+                <p className={styles.text}>
+                    {currentEvent.description}
+                    {/* Do you like reading in English? Reading is a great way to improve your
           vocabulary and learn new things. We have lots of interesting texts for you
           to read. Read, play games, print activities and post comments too! */}
-                    </p>
+                </p>
 
-                    {/* Bonus ( for Users ) */}
-                    <div className={styles['details-join']}>
+
+                {user.email 
+                    ? (<div className={styles['details-join']}>
                         <h2>Do you want to join ?</h2>
                         <div className={styles.join}>
 
-                            <Link to={`/join/${eventId}`}  className={styles.buttons1}>
+                            <button to={`/join/${eventId}`}  className={styles.buttons1}>
                                 Join now
-                            </Link>
-
-                        </div>
-
-                    </div>
-                    < div className={styles['details-visitors']}>
-                        <h2>Visitors:</h2>
-                        <ul>
-                            <li className={styles.visitorName}>
-                                <p>email 1</p>
-                            </li>
-                            <li className={styles.visitorName}>
-                                <p>email 2</p>
-                            </li>
-                        </ul>
-                        <div className={styles['btn-visit']}>
-                            <span >Already joined. Don't be late!</span>
-                            <span >No visitors yet! [0]</span>
-                        </div>
-                    </div>
-                    {user.email
-                        ? (<div className={styles.buttons}>
-
-                            <Link to={`/events/${eventId}/edit`} className={styles.button}>
-                                Edit
-                            </Link>
-                            <button onClick={deleteHandler} className={styles.button}>
-                                Delete
                             </button>
-                        </div>)
-                        : null}
+
+                        </div>
+                    </div>)
+                    : null}
 
 
 
+                < div className={styles['details-visitors']}>
+                    <h2>Visitors:</h2>
+                    <ul>
+                        <li className={styles.visitorName}>
+                            <p>email 1</p>
+                        </li>
+                        <li className={styles.visitorName}>
+                            <p>email 2</p>
+                        </li>
+                    </ul>
+                    <div className={styles['btn-visit']}>
+                        { currentEvent.visitors <= 0 
+                        ?<span >No visitors yet!</span>
+                        :<span >Already joined. Don't be late!</span>}
+                    </div>
                 </div>
-            </section>
-        )
-    }
+                {user.email && (user._id === currentEvent._ownerId)
+                    ? (<div className={styles.buttons}>
+                        <Link to={`/events/${eventId}/edit`} className={styles.button}>
+                            Edit
+                        </Link>
+                        <button onClick={deleteHandler} className={styles.button}>
+                            Delete
+                        </button>
+                    </div>)
+                    : null}
+            </div>
+        </section>
+    )
+}
 
-    export default Details;
+export default Details;
