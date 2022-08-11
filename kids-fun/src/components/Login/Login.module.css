@@ -107,3 +107,6 @@ label[for="terms"]>input {
 .btn-submit{
     text-align: center;
 }
+span{
+    color: red;
+}

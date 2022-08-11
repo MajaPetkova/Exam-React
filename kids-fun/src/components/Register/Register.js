@@ -4,8 +4,6 @@ import styles from './Register.module.css';
 import * as authService from '../../services/authService'
 import { AuthContext } from '../../contexts/AuthContext';
 
-
-
 const Register = () => {
     const { userLogin } = useContext(AuthContext)
     const navigate= useNavigate();

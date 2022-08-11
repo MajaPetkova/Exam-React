@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from 'react';
 import * as eventService from '../../services/eventService'
 import { EventContext } from '../../contexts/EventContext';
 import { AuthContext } from '../../contexts/AuthContext';
-// import * as visitorService from '../../services/visitorsService';
+import * as visitorService from '../../services/visitorsService';
 
 const Details = () => {
     const { eventRemove, } = useContext(EventContext)
@@ -16,7 +16,6 @@ const Details = () => {
 
     useEffect(() => {
         eventService.getOne(eventId)
-
             .then(result => {
                 setCurrentEvent(result)
                 // console.log(result)
@@ -34,13 +33,11 @@ const Details = () => {
                 })
         }
     }
-    // const joinHandler = () => {
-    //     visitorService.addVisitor(eventId, user)
-    //     .then(res=>{
-    //         console.log(res)
-    //     })
-
-    // }
+    const joinHandler = (currentEvent, visitor) => {
+  visitorService.addVisitor()
+   .then(res=>
+    console.log(res))
+    }
 
     return (
         <section className={styles['event-details']}>
@@ -58,22 +55,25 @@ const Details = () => {
                     <h3>Date:</h3>
                     <p>{currentEvent.date}</p>
                 </div>
-                <p className={styles.text}>
+                <div className={styles.text}>
+                <h3>Description:</h3>
+                <p>
                     {currentEvent.description}
                     {/* Do you like reading in English? Reading is a great way to improve your
           vocabulary and learn new things. We have lots of interesting texts for you
-          to read. Read, play games, print activities and post comments too! */}
+        to read. Read, play games, print activities and post comments too! */}
                 </p>
+        </div>
 
 
-                {user.email 
+                {user.email && (user._id !== currentEvent._ownerId)
                     ? (<div className={styles['details-join']}>
                         <h2>Do you want to join ?</h2>
                         <div className={styles.join}>
 
-                            <button to={`/join/${eventId}`}  className={styles.buttons1}>
+                            <Link to={`/join/${eventId}`} onClick={joinHandler} className={styles.buttons1}>
                                 Join now
-                            </button>
+                            </Link>
 
                         </div>
                     </div>)

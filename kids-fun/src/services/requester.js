@@ -32,7 +32,7 @@ export const request = async (method, url, data) => {
         return result;
     } catch (error) {
         console.log(error)
-    }
+        }
 }
 
 

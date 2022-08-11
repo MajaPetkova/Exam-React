@@ -76,15 +76,15 @@ router.delete('/:id', isAuth(),isOwner(), async(req, res)=>{
    }
    
 })
-router.get('/join/:id',isAuth(), async(req, res)=>{
-   const id= req.params.id;
-   try{
-      await api.joinEvent(id, req.user._id)
-      console.log(result)
-   }catch(err){
-      console.error(err)
-      // const message= errorMapper(err)
-   }
-})
+// router.get('/join/:id',isAuth(), async(req, res)=>{
+//    const eventId= req.params.id;
+//    try{
+//       const result=await api.joinEvent(eventId, req.user._id)
+//       console.log(result)
+//    }catch(err){
+//       console.error(err)
+//       // const message= errorMapper(err)
+//    }
+// })
 
 module.exports = router;

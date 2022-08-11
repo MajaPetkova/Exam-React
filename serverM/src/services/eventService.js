@@ -43,15 +43,15 @@ async function deleteById(id) {
     return await Event.findByIdAndDelete(id);
 }
 
-async function joinEvent(eventId, userId) {
-    const event = await Event.findById(eventId)
+// async function joinEvent(event, userId) {
+//     const event = await Event.findById(event)
 
-    if (event.visitors.includes(userId)) {
-        throw new Error('User is already on the list')
-    };
-    event.visitors.push(userId)
-    await event.save();
-}
+//     if (event.visitors.includes(userId)) {
+//         throw new Error('User is already on the list')
+//     };
+//     event.visitors.push(userId)
+    // await event.save();
+// }
 
 module.exports = {
     getAll,
@@ -59,5 +59,5 @@ module.exports = {
     getById,
     updateById,
     deleteById,
-    joinEvent
+    // joinEvent
 }

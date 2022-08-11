@@ -98,7 +98,7 @@
 .text {
      font-size: 24px;
     color:#2a2548 ;
-    font-family: "Raleway", sans-serif;
+    /* font-family: "Raleway", sans-serif; */
 }
 
 .buttons {
@@ -172,6 +172,12 @@ text-align: center;
 .place h3{
     color:#2a2548 ;
     text-align: center;
+}
+.text h3{
+    color:#2a2548 ;
+    text-align: center;
+    font-size:26px;
+    font-weight:bolder;
 }
 .no-events{
     font-size: 30px;
