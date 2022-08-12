@@ -20,15 +20,13 @@ export const EventProvider=(
             .then(result => {
                 setEvents(result)
             })
-        
+    
         }
-        catch (e) {
-            console.log(e)
+        catch (error) {
+            console.log(error)
         }
-
     }, [])
 
- 
     const addEventHandler = (eventData) => {
         setEvents(state => [
             ...state,

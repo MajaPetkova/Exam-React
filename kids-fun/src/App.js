@@ -14,7 +14,7 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Logout from './components/logout/Logout';
-import Error from './components/errorPage/Error';
+import Error from './components/ErrorPage/Error';
 
 
 function App() {
