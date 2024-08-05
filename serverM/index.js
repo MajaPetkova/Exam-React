@@ -7,7 +7,7 @@ const auth = require('./src/middlewares/auth');
 
 async function start() {
     try {
-        const db = await mongoose.connect('mongodb://localhost:27017/funKids');
+        const db = await mongoose.connect('mongodb+srv://majapetkova11:sE78tE66wvtFn1ZB@cluster0.4hkslpj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
         console.log('DB ready')
     } catch (err) {
         console.log('Error connecting to database');
